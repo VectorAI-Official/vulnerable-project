@@ -35,7 +35,7 @@ export default function AdminPage() {
     const [sqlQuery, setSqlQuery] = useState("");
     const [queryResult, setQueryResult] = useState<any>(null);
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://vulnerable-project-1-backend.vercel.app/api";
 
     useEffect(() => {
         // VULNERABILITY: Client-side only admin check - easily bypassed
@@ -362,16 +362,16 @@ export default function AdminPage() {
                                     logs.map((log) => (
                                         <div key={log.id} className="flex items-start gap-4 p-4 bg-gray-800/30 rounded-lg">
                                             <div className={`w-2 h-2 rounded-full mt-2 ${log.type === 'error' ? 'bg-red-400' :
-                                                    log.type === 'warning' ? 'bg-yellow-400' :
-                                                        log.type === 'security' ? 'bg-orange-400' :
-                                                            'bg-green-400'
+                                                log.type === 'warning' ? 'bg-yellow-400' :
+                                                    log.type === 'security' ? 'bg-orange-400' :
+                                                        'bg-green-400'
                                                 }`} />
                                             <div className="flex-1">
                                                 <div className="flex items-center gap-4 mb-1">
                                                     <span className={`text-xs font-mono uppercase ${log.type === 'error' ? 'text-red-400' :
-                                                            log.type === 'warning' ? 'text-yellow-400' :
-                                                                log.type === 'security' ? 'text-orange-400' :
-                                                                    'text-green-400'
+                                                        log.type === 'warning' ? 'text-yellow-400' :
+                                                            log.type === 'security' ? 'text-orange-400' :
+                                                                'text-green-400'
                                                         }`}>
                                                         {log.type}
                                                     </span>

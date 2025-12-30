@@ -23,7 +23,7 @@ export default function DashboardPage() {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedUserId, setSelectedUserId] = useState("");
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://vulnerable-project-1-backend.vercel.app/api";
 
     useEffect(() => {
         // VULNERABILITY: Client-side only auth check
@@ -285,9 +285,9 @@ export default function DashboardPage() {
                                             </td>
                                             <td>
                                                 <span className={`badge ${project.status === 'active' ? 'badge-success' :
-                                                        project.status === 'pending' ? 'badge-warning' :
-                                                            project.status === 'completed' ? 'badge-info' :
-                                                                'badge-danger'
+                                                    project.status === 'pending' ? 'badge-warning' :
+                                                        project.status === 'completed' ? 'badge-info' :
+                                                            'badge-danger'
                                                     }`}>
                                                     {project.status}
                                                 </span>

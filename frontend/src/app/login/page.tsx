@@ -17,7 +17,7 @@ function LoginFormContent() {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://vulnerable-project-1-backend.vercel.app/api";
 
     // VULNERABILITY: Debug password logging
     useEffect(() => {
